@@ -1,9 +1,16 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: siambos-hair-stylist
 
+
+---
 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: siambos-hair-stylist
+  namespace: siambos-hair-stylist
   labels:
     app: siambos-hair-stylist
 spec:
@@ -29,6 +36,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: siambos-hair-stylist
+  namespace: siambos-hair-stylist
 spec:
   selector:
     app: siambos-hair-stylist
