@@ -1,0 +1,40 @@
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: siambos-hair-stylist
+  labels:
+    app: siambos-hair-stylist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: siambos-hair-stylist
+  template:
+    metadata:
+      labels:
+        app: siambos-hair-stylist
+    spec:
+      containers:
+      - name: nodeserver
+        image: td7165/siambos-hair-stylist:v0.0.0
+        ports:
+        - containerPort: 3003
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: siambos-hair-stylist
+spec:
+  selector:
+    app: siambos-hair-stylist
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 3003
+    nodePort: 31110
