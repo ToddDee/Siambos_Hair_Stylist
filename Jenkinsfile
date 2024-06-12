@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
         steps {
-            git branch: 'main', url: 'git@github.com:ToddDee/Siambos_Hair_Stylist.git'
+            git branch: 'main', url: 'https://github.com/ToddDee/Siambos_Hair_Stylist.git'
         }
     }
 
