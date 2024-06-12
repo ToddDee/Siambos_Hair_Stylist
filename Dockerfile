@@ -13,11 +13,8 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Set the environment variable to change the default port
-ENV PORT 3003
-
 # Expose the port the app runs on
-EXPOSE 3003
+EXPOSE 3000
 
 # Define the command to run the app
 CMD ["npm", "run", "dev"]

@@ -27,7 +27,7 @@ spec:
       - name: nodeserver
         image: td7165/siambos-hair-stylist:v0.0.0
         ports:
-        - containerPort: 3003
+        - containerPort: 3000
 
 
 ---
@@ -44,5 +44,5 @@ spec:
   ports:
   - protocol: TCP
     port: 5000
-    targetPort: 3003
+    targetPort: 3000
     nodePort: 31111
